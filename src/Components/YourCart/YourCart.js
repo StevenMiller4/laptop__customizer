@@ -15,8 +15,7 @@ class YourCart extends Component {
             
             return (
                 <Summary
-                    feature = {feature}
-                    featureHash = {featureHash}
+                    key={featureHash}
                     selectedOption = {selectedOption}
                 />
             )
