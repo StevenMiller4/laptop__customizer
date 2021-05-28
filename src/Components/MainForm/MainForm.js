@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Features from "../Features/Features"
 
 class MainForm extends Component {
     render() {
