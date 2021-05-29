@@ -23,12 +23,9 @@ class YourCart extends Component {
             <section className="main__summary">
                 <h2>Your cart</h2>
                 {summary}
-                <div className="summary__total">
-                    <div className="summary__total__label">Total</div>
-                    <Total 
-                        total = {this.props.total}
-                    />
-                </div>
+                <Total 
+                    total = {this.props.total}
+                />
             </section>
         );
     }
