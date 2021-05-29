@@ -3,13 +3,14 @@ import slugify from 'slugify'
 
 import Options from "../Options/Options"
 import Features from "../Features/Features"
+import FEATURES from "../../computerParts"
 
 class MainForm extends Component {
     render() {
 
-        const features = Object.keys(this.props.features).map((feature, idx) => {
+        const features = Object.keys(FEATURES).map((feature, idx) => {
             const featureHash = feature + '-' + idx;
-            const options = this.props.features[feature].map(item => {
+            const options = FEATURES[feature].map(item => {
                 const itemHash = slugify(JSON.stringify(item));
                 return (
                   <Options 

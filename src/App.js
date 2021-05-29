@@ -49,7 +49,6 @@ class App extends Component {
         <MainForm
           selected = {this.state.selected}
           updateFeature = {this.updateFeature}
-          features = {this.props.features}
         />
         <YourCart 
           selected = {this.state.selected}
