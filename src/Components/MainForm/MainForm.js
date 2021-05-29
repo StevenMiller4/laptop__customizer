@@ -11,7 +11,12 @@ class MainForm extends Component {
                 <main>
                     <form className="main__form">
                         <h2>Customize your laptop</h2>
-                        {this.props.features}
+                        <Features
+                            feature = {this.props.feature}
+                            updateFeature = {this.props.updateFeature}
+                            selected = {this.props.selected}
+                            features = {this.props.features}
+                        />
                     </form>
                 </main>
             </div>
