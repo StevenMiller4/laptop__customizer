@@ -1,10 +1,7 @@
 import React, { Component } from "react"
-import Summary from "../Summary/Summary"
 
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-});
+import Summary from "../Summary/Summary"
+import Total from "../Total/Total"
 
 class YourCart extends Component {
     render() {
@@ -28,9 +25,9 @@ class YourCart extends Component {
                 {summary}
                 <div className="summary__total">
                     <div className="summary__total__label">Total</div>
-                    <div className="summary__total__value">
-                        {USCurrencyFormat.format(this.props.total)}
-                    </div>
+                    <Total 
+                        total = {this.props.total}
+                    />
                 </div>
             </section>
         );
