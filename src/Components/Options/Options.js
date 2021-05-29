@@ -1,7 +1,10 @@
 import React, { Component } from "react"
 import slugify from 'slugify'
 
-import FeatureItem from "../FeatureItem/FeatureItem"
+const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+});
 
 class Options extends Component {
     render() {
@@ -10,15 +13,21 @@ class Options extends Component {
             const itemHash = slugify(JSON.stringify(item));
 
             return (
-                <FeatureItem
-                    item = {item}
-                    feature = {this.props.feature}
-                    updateFeature = {this.props.updateFeature}
-                    selected = {this.props.selected}
-                    options = {options}
-                    itemHash = {itemHash}
-                />
+                <div key={itemHash} className="feature__item">
+                    <input
+                        type="radio"
+                        id={itemHash}
+                        className="feature__option"
+                        name={slugify(this.props.feature)}
+                        checked={item.name === this.props.selected[this.props.feature].name}
+                        onChange={e => this.updateFeature(this.props.feature, item)}
+                    />
+                    <label htmlFor={itemHash} className="feature__label">
+                        {item.name} ({USCurrencyFormat.format(item.cost)})
+                    </label>
+                </div>
             )
+
         })
 
         return (
